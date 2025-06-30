@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #1e07f1;
+            padding: 30px;
+        }
+        form {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/predict" method="post">
+        <h2>Heart Disease Prediction Form</h2>
+
+        <input type="number" name="age" placeholder="Age" required>
+        <select name="sex" required>
+            <option value="">Select Sex</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+        <input type="number" name="trestbps" placeholder="Resting Blood Pressure" required>
+        <input type="number" name="chol" placeholder="Cholesterol (mg/dl)" required>
+        <select name="fbs" required>
+            <option value="">Fasting Blood Sugar > 120 mg/dl</option>
+            <option value="1">True</option>
+            <option value="0">False</option>
+        </select>
+        <input type="number" name="thalach" placeholder="Max Heart Rate Achieved" required>
+        <select name="exang" required>
+            <option value="">Exercise Induced Angina</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+        <input type="number" step="any" name="oldpeak" placeholder="Oldpeak" required>
+        <input type="number" name="ca" placeholder="Number of Major Vessels (0–3)" required>
+
+      <h2>Optional</h2>
+        <select name="cp">
+            <option value="">Chest Pain Type (Optional)</option>
+            <option value="0">Typical Angina</option>
+            <option value="1">Atypical Angina</option>
+            <option value="2">Non-anginal Pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+        <select name="restecg">
+            <option value="">Resting ECG (Optional)</option>
+            <option value="0">Normal</option>
+            <option value="1">ST-T Abnormality</option>
+            <option value="2">LV Hypertrophy</option>
+        </select>
+        <select name="slope">
+            <option value="">Slope of ST Segment (Optional)</option>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select>
+        <select name="thal">
+            <option value="">Thalassemia (Optional)</option>
+            <option value="0">Normal</option>
+            <option value="1">Fixed Defect</option>
+            <option value="2">Reversible Defect</option>
+            <option value="3">Other</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
